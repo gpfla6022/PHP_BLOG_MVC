@@ -13,9 +13,10 @@ $logonMember = $_REQUEST['App__logonMember'];
 </head>
 <body>
 <h1>
-    !! TEST MODE !!
+    CODERSCODE
 </h1>
 <hr>
+<a href="../board/list.php">홈</a>
 <div>
     <?php if ( isset($_SESSION['logonMember']) ) { ?>
         <div>
@@ -31,5 +32,3 @@ $logonMember = $_REQUEST['App__logonMember'];
         </div>
     <?php } ?>
 </div>
-<hr>
-<a href="../board/list.php">홈</a>

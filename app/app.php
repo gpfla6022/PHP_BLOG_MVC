@@ -3,14 +3,17 @@
 ## 리포지터리 호출
 require_once __DIR__ . '/Repository/MemberRepository.php';
 require_once __DIR__ . '/Repository/BoardRepository.php';
+require_once __DIR__ . '/Repository/ArticleRepository.php';
 
 ## 서비스 호출
 require_once __DIR__ . '/service/MemberService.php';
 require_once __DIR__ . '/service/BoardService.php';
+require_once __DIR__ . '/service/ArticleService.php';
 
 ## 컨트롤러 호출
 require_once __DIR__ . '/controller/MemberController.php';
 require_once __DIR__ . '/controller/BoardController.php';
+require_once __DIR__ . '/controller/ArticleController.php';
 
 ## 전역변수 호출
 require_once __DIR__ . '/global.php';

@@ -36,7 +36,7 @@ class APP__UsrBoardController {
         $id = $this -> boardService -> addBoard($name, $memId, $writeAuth);
     
         # 생성된 게시판으로 복귀
-        BackToPath("/../../index.php","게시판이 성공적으로 생성되었습니다.");
+        BackToPath("/../../index.php","게시판이 생성되었습니다.");
     
     }
 

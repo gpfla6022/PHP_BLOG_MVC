@@ -41,6 +41,8 @@ function App__runNeedLoginInterCeptor($action) {
         case 'usr/member/doJoin':
         case 'usr/board/list';
         case 'usr/board/detail';
+        case 'usr/article/list';
+        case 'usr/article/write';
             return;
     }
 
