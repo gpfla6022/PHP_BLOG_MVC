@@ -161,6 +161,7 @@ function BackToPath($path, $msg = null){
         location.replace('${path}');
     </script>
     ");
+    exit;
 
 }
 
@@ -176,7 +177,7 @@ function BackToHistory($msg = null){
         history.back();
     </script>
     ");
-
+    exit;
 }
 
 # 문자열 값 존재여부 확인

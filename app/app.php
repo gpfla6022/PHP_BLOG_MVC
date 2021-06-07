@@ -4,16 +4,19 @@
 require_once __DIR__ . '/Repository/MemberRepository.php';
 require_once __DIR__ . '/Repository/BoardRepository.php';
 require_once __DIR__ . '/Repository/ArticleRepository.php';
+require_once __DIR__ . '/Repository/ReplyRepository.php';
 
 ## 서비스 호출
 require_once __DIR__ . '/service/MemberService.php';
 require_once __DIR__ . '/service/BoardService.php';
 require_once __DIR__ . '/service/ArticleService.php';
+require_once __DIR__ . '/service/ReplyService.php';
 
 ## 컨트롤러 호출
 require_once __DIR__ . '/controller/MemberController.php';
 require_once __DIR__ . '/controller/BoardController.php';
 require_once __DIR__ . '/controller/ArticleController.php';
+require_once __DIR__ . '/controller/ReplyController.php';
 
 ## 전역변수 호출
 require_once __DIR__ . '/global.php';

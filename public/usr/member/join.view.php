@@ -2,9 +2,9 @@
 $pageTitle = "회원가입";
 require_once __DIR__ . '/../header.php';
 ?>
-<div>
+<h1>
     회원가입
-</div>
+</h1>
 <div>
     <form action="doJoin.php" method="POST">
         <table>

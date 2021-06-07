@@ -16,14 +16,13 @@ $logonMember = $_REQUEST['App__logonMember'];
     CODERSCODE
 </h1>
 <hr>
-<a href="../board/list.php">홈</a>
 <div>
     <?php if ( isset($_SESSION['logonMember']) ) { ?>
         <div>
-            Log-on-Number :: <?=var_dump($_SESSION['logonMember'])?>
-            <a href="../member/doLogout.php">로그아웃</a>
-            <a href="../member/modify.php">정보수정</a>
-            <a href="../member/doDelete.php">회원탈퇴</a>
+            <a href="../member/doLogout.php">로그아웃</a><br>
+            <a href="../member/modify.php">정보수정</a><br>
+            <a href="../member/doDelete.php">회원탈퇴</a><br>
+            <a href="../article/write.php">글작성</a>
         </div>
     <?php } else { ?>
         <div>
@@ -32,3 +31,5 @@ $logonMember = $_REQUEST['App__logonMember'];
         </div>
     <?php } ?>
 </div>
+<hr>
+<a href="../board/list.php">홈</a>

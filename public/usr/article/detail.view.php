@@ -1,21 +1,33 @@
 <?php
-$pageTitle = "ARTICLE DETAIL";
+$pageTitle = $article['title'] . " 상세보기 ";
 require_once __DIR__ . '/../header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../webinit.php';
+$memberService = new APP__MemberService();
+$relyService = new APP__ReplyService();
+$replies = $relyService -> getReplies($article['id']);
 ?>
-<h1><?=$article['id']?>번 게시물 상세보기</h1>
+<h1> 글제목 :  <?=$article['title']?>  </h1>
+<hr>
+내용 : <?=$article['body']?><br>
+글쓴회원번호 : <?=$article['memIndex']?> 
+<hr>
+<a href="modify.php?articleId=<?=$article['id']?>">수정</a>
+<a href="doDelete.php?id=<?=$article['id']?>">삭제</a>
+<hr>
 <?php
-    foreach ($articles as $article){
-        $detailPath = "detail.php?id=${article['id']}";
-    ?>
-    <span>게시물 번호 : <?=$article['id']?></span><br>
-    <span>게시물 제목 : <?=$article['title']?></span><br>
-    <span>게시물 내용 : <?=$article['body']?></span><br>
-    <span>게시물 작성일 : <?=$article['regDate']?></span><br>
-    <span>게시물 수정일 : <?=$article['updateDate']?></span>
-    <?php } ?>
-<div>
-    <a href="list.php">게시물 리스트로 돌아가기</a>
-</div>
+require_once __DIR__ . '/../reply/write.php';
+?>
+<hr>
+<h2> 댓글 목록</h2>
+<?php foreach( $replies as $reply ) { 
+    $member = $memberService -> getMemberByIndex($reply['memIndex']);?>
+    작성자 : <?=$member['memNick']?><br>
+    댓글 : <?=$reply['body']?>
+    <hr>
+    <a href="/usr/reply/modify.php?articleId=<?=$article['id']?>">수정</a>
+    <a href="/usr/reply/doDelete.php?id=<?=$article['id']?>">삭제</a>
+<hr>
+<?php } ?>
 <?php
 require_once __DIR__ . '/../footer.php';
 ?>

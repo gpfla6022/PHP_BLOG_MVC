@@ -31,17 +31,13 @@ class APP__BoardRepository {
     # 특정 게시판 조회 메소드
     function getBoardByIndex($id) {
 
-        $sql = new DB__SeqSql;
+        $sql = new DB__SeqSql();
         $sql -> add("SELECT *");
         $sql -> add("FROM `board`");
         $sql -> add("WHERE `id` = ?",$id);
 
         return DB__getRow($sql);
 
-    } 
-
-
-
-
+    }
 
 }

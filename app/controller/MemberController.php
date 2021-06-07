@@ -65,6 +65,17 @@ class APP__UsrMemberController {
 
         # 세션에 회원번호 할당
         $_SESSION['logonMember'] = $member['id'];
+        $_SESSION['writeAuth'] = true;
+        
+        if (isset($_SESSION['logonMember']) && $member['id'] == 1) {
+            $_SESSION['admin'] = true;
+        }
+
+        if (isset($_SESSION['logonMember']) && $member['id'] != 1) {
+            $_SESSION['admin'] = false;
+        }
+
+
         # 인덱스로 복귀
         backToPath("/../../index.php","{$member['memNick']}님 환영합니다! ");
 
@@ -74,6 +85,8 @@ class APP__UsrMemberController {
     function actionDoLogout() {
         # 세션 변수 해제
         unset($_SESSION['logonMember']);
+        unset($_SESSION['admin']);
+        unset($_SESSION['writeAuth']);
         BackToPath("/../../index.php", " 로그아웃 되셨습니다. ");
     }
 
@@ -125,6 +138,8 @@ class APP__UsrMemberController {
 
         # 강제 로그아웃
         unset($_SESSION['logonMember']);
+        unset($_SESSION['admin']);
+        unset($_SESSION['writeAuth']);
 
         # 인덱스 페이지로 복귀
         backToPath("/../../index.php","그동안 감사했습니다.");

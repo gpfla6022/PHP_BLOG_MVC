@@ -2,9 +2,9 @@
 $pageTitle = "회원정보 수정";
 require_once __DIR__ . '/../header.php';
 ?>
-<div>
+<h1>
     회원 정보 수정
-</div>
+</h1>
 <div>
     <form action="doModify.php" method="POST">
         <table>

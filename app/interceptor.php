@@ -25,6 +25,7 @@ function App__runBeforeActionInterceptor($action) {
         $_REQUEST['App__logonMemberIndex'] = intval($_SESSION['logonMember']);
         ##  로그인한 회원의 array
         $_REQUEST['App__logonMember'] = $App__memberService -> getMemberByIndex($_REQUEST['App__logonMemberIndex']);
+
     }
 }
 
@@ -39,10 +40,10 @@ function App__runNeedLoginInterCeptor($action) {
         case 'usr/member/doLogin':
         case 'usr/member/join':
         case 'usr/member/doJoin':
-        case 'usr/board/list';
-        case 'usr/board/detail';
-        case 'usr/article/list';
-        case 'usr/article/write';
+        case 'usr/board/list':
+        case 'usr/board/detail':
+        case 'usr/article/list':
+        case 'usr/article/detail':
             return;
     }
 
@@ -83,6 +84,6 @@ function App__runInterCeptor($action) {
     App__runBeforeActionInterceptor($action);
     App__runNeedLoginInterCeptor($action);
     App__runNeedLogoutInterceptor($action);
-
+    
 }
 

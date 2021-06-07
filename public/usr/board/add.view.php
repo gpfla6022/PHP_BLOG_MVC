@@ -1,11 +1,12 @@
 <?php
-$pageTitle = "ADD BOARD";
+$pageTitle = "게시판 생성";
 require_once __DIR__ . '/../header.php';
 ?>
-<h1>ADD BOARD</h1>
-<hr>
+<h1>
+    게시판 생성
+</h1>
 <div>
-    <form action="doAdd.php">
+    <form action="doAdd.php" meth1="get">
         <input type="hidden" name="memId" value="<?=$_SESSION['logonMember']?>">
         <table>
             <tr>
@@ -14,10 +15,10 @@ require_once __DIR__ . '/../header.php';
             </tr>
         </table>
         <select name="writeAuth">
-            <option value="true">관리자만 글쓰기 허용</option>
-            <option value="false">모든 이용자 글쓰기 허용</option>
+            <option value="false">관리자만 글쓰기 허용</option>
+            <option value="true">모든 이용자 글쓰기 허용</option>
         </select>
-        <input type="submit" value="확인">
+        <input type="submit" value="생성">
     </form>
     <a href="../../index.php"><button>취소</button></a>
 </div>
